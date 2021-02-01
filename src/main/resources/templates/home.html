@@ -10,22 +10,26 @@
 </head>
 
 <body>
-
+<div class="container">
 <h1>Coronavirus Tracker</h1>
 <p> Esta aplicação lista os números atuais de casos reportados da covid-19 no mundo.</p>
 
 <div class="jumbotron">
     <h1 class="display-4" th:text="${totalReportedCases}"></h1>
-    <p class="lead">Total de casos relatados até hoje.</p>
+    <p class="lead">Total de casos reportados até hoje</p>
+    <hr class="my-4">
+    <p>
+        <span>Novos casos reportados desde o último dia</span>
+        <span th:text="${totalNewCases}"</span>
+    </p>
 </div>
 
-<div class="container">
-    <table>
+    <table class="table">
         <tr>
             <th>Estado</th>
             <th>País</th>
             <th>Total de casos reportados</th>
-            <th>Casos novos desde o último dia</th>
+            <th>Casos novos hoje</th>
         </tr>
         <tr th:each="locationStat : ${locationStats}">
             <td th:text="${locationStat.state}"></td>
